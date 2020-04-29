@@ -1,14 +1,18 @@
+import 'sanitize.css'
+import './index.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './containers/AppContainer';
 import * as serviceWorker from './serviceWorker';
+
+const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
 
 // If you want your app to work offline and load faster, you can change
