@@ -6,7 +6,7 @@ import Stage from '../../components/Stage/index.jsx';
 describe('<StageContainer>', () => {
   const props = {
     legal: true,
-    stages: [
+    initStages: [
       {
         dlc: 0,
         id: 1,
@@ -27,6 +27,6 @@ describe('<StageContainer>', () => {
 
   it('should render the same number of Stage components as stages', () => {
     const container = mount(<StageContainer {...props} />);
-    expect(container.find(Stage).length).toEqual(props.stages.length);
+    expect(container.find(Stage).length).toEqual(props.initStages.length);
   })
 });

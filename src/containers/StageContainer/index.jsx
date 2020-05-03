@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import withStageData from '../../hoc/withStageData/index.jsx';
+import { getStages, getLegalStages } from '../../lib/api';
 import Stage from '../../components/Stage/index.jsx';
 
 import './StageContainer.scss';
 
-const StageContainer = ({ legal, stages = [] }) => {
+const StageContainer = ({ legal = true, initStages = [{}] }) => {
+  const [stages, setStages] = useState(initStages);
+
+  useEffect(() => {
+    if (legal) {
+      getLegalStages().then((legalStages) => {
+        setStages(legalStages);
+      });
+    } else {
+      getStages().then((stages) => {
+        setStages(stages);
+      });
+    }
+  }, [legal]);
+
   const stageDataPopulated = () => Object.getOwnPropertyNames(stages[0]).length
 
   return (
@@ -22,8 +36,8 @@ const {
 } = propTypes;
 
 StageContainer.propTypes = {
-  legal: bool.isRequired,
-  stages: arrayOf(object).isRequired
+  legal: bool,
+  initStages: arrayOf(object)
 };
 
-export default withStageData(StageContainer);
+export default StageContainer;
