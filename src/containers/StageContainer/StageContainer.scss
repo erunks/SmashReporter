@@ -1,0 +1,5 @@
+.StageContainer {
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  gap: 10px;
+}

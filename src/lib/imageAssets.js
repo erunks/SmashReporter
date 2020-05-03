@@ -6,7 +6,6 @@ export const URLS = {
     const costume = costumeId !== 1 ? `${costumeId}` : '';
     return `${fighterAssets}/${name}/main${costume}.png`
   },
-  fighterAlt: (name) => this.fighter(name, 8),
   // The icon url sometimes require the fighter name to be japanese
   fighterIcon: (name) => `${fighterAssets}/pict/${name}.png`,
   fighterMark: (name) => `${fighterAssets}/${name}/mark.svg`,

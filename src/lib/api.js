@@ -1,12 +1,14 @@
 import { request, requestWithRetry } from './requests';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export const URLS = {
-  getFightersLike: '/fighters?fighterName=',
-  fighters: '/fighters',
-  getLegalStages: '/stages?legal=true',
-  getStages: '/stages',
-  matches: '/matches',
-  players: '/players'
+  getFightersLike: `${apiUrl}/fighters?fighterName=`,
+  fighters: `${apiUrl}/fighters`,
+  getLegalStages: `${apiUrl}/stages?legal=true`,
+  getStages: `${apiUrl}/stages`,
+  matches: `${apiUrl}/matches`,
+  players: `${apiUrl}/players`
 };
 
 export function getFighter(fighterId) {

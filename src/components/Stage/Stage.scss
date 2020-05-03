@@ -1,0 +1,35 @@
+.stage {
+  display: flex;
+  position: relative;
+}
+
+.stageCard {
+  position: relative;
+  max-width: 325px;
+
+  .namePlate {
+    background-color: black;
+    height: 30px;
+    max-width: 100%;
+  }
+
+  img {
+    border: 3px solid;
+    height: auto;
+    max-height:100%;
+    max-width:100%;
+    width: 150px;
+  }
+
+  .name {
+    color: white;
+    font-size: 12px;
+    padding: 0.25em 2px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
