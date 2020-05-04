@@ -16,9 +16,10 @@ const Fighter = (props) => {
     <div className="fighter">
       <div className="fighterCard">
         <img src={URLS.fighterThumbnailIcon(fighterAssetName(props.name))} alt={`fighter: ${props.name}`} />
-        {/* <div className="namePlate">
-          <div className="name">{props.name}</div>
-        </div> */}
+        <div className="selection">
+          <div className="topLeft"></div>
+          <div className="bottomRight"></div>
+        </div>
       </div>
     </div>
   );
