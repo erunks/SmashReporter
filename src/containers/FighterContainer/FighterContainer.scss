@@ -1,0 +1,10 @@
+.FighterContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .fighterRow:first-child {
+    border-top: 2px solid;
+  }
+}

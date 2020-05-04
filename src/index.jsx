@@ -4,12 +4,13 @@ import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './containers/AppContainer';
-import StageContainer from './containers/StageContainer/index.jsx';
+// import StageContainer from './containers/StageContainer/index.jsx';
+import FighterContainer from './containers/FighterContainer/index.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <StageContainer legal={true} />
+    <FighterContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );

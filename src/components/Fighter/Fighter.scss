@@ -1,0 +1,35 @@
+.fighter {
+  display: flex;
+  position: relative;
+}
+
+.fighterCard {
+  position: relative;
+  max-width: 100px;
+
+  .namePlate {
+    background-color: black;
+    height: 30px;
+    max-width: 100%;
+  }
+
+  img {
+    border-right: 2px solid;
+    height: auto;
+    max-height:60px;
+    max-width:100%;
+    width: 100px;
+  }
+
+  .name {
+    color: white;
+    font-size: 12px;
+    padding: 0.25em 2px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}

@@ -20,11 +20,11 @@ const StageContainer = ({ legal = true, initStages = [{}] }) => {
     }
   }, [legal]);
 
-  const stageDataPopulated = () => Object.getOwnPropertyNames(stages[0]).length
+  const stagesPopulated = () => Object.getOwnPropertyNames(stages[0]).length
 
   return (
     <div className="StageContainer">
-      {stageDataPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />)}
+      {stagesPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />)}
     </div>
   );
 };
