@@ -1,36 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import propTypes from 'prop-types';
-import chunk from 'lodash/chunk';
-import { getFighters } from '../../lib/api';
-import FighterRow from '../../components/FighterRow/index.jsx';
-
+import React, { useState } from 'react';
+import FighterChoice from '../../components/FighterChoice/index.jsx';
+import FighterSelection from '../../components/FighterSelection/index.jsx';
 import './FighterContainer.scss';
 
-const FighterContainer = ({ initFighters = [{}] }) => {
-  const [fighters, setFighters] = useState(initFighters);
+const FighterContainer = () => {
+  const [playerOneFighter, setplayerOneFighter] = useState('mario');
+  const [playerTwoFighter, setplayerTwoFighter] = useState('mario');
+  const [selectingPlayer, setSelectingPlayer] = useState(0);
 
-  useEffect(() => {
-    getFighters().then((fighters) => {
-      setFighters(fighters);
-    });
-  }, [])
 
-  const fightersPopulated = () => Object.getOwnPropertyNames(fighters[0]).length
+  const setPlayerFighter = (name) => {
+    if (selectingPlayer === 0) {
+      setplayerOneFighter(name);
+    } else if (selectingPlayer === 1) {
+      setplayerTwoFighter(name);
+    }
+  };
 
   return (
     <div className="FighterContainer">
-      {fightersPopulated() && chunk(fighters, 12).map((fighterChunk, index) => <FighterRow key={`fighterRow${index}`} fighterChunk={fighterChunk} />)}
+      <FighterChoice
+        leftFacing={true}
+        fighter={playerOneFighter}
+        onClick={() => setSelectingPlayer(0)}
+      />
+      <FighterSelection
+        setPlayerFighter={setPlayerFighter}
+        selectingPlayer={selectingPlayer}
+      />
+      <FighterChoice
+        fighter={playerTwoFighter}
+        onClick={() => setSelectingPlayer(1)}
+      />
     </div>
   )
-};
-
-const {
-  arrayOf,
-  object
-} = propTypes;
-
-FighterContainer.propTypes = {
-  initFighters: arrayOf(object)
 };
 
 export default FighterContainer;

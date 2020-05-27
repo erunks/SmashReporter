@@ -1,0 +1,43 @@
+@import '../../styles/base.scss';
+$temp: white;
+
+.FighterChoice {
+  align-items: center;
+  border: 4px solid $temp;
+  display: flex;
+  filter: drop-shadow(15px 15px 4px $temp);
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  transform: skewY(-5deg);
+  width: 100%;
+
+  &.faceLeft {
+    filter: drop-shadow(-15px 15px 4px $temp);
+    transform: skewY(5deg);
+
+    img {
+      transform: scale(-1,1);
+    }
+  }
+
+  &:hover {
+    .helpText {
+      @include visible(flex);
+    }
+  }
+
+  .helpText {
+    @include absolute-position;
+    @include hidden;
+
+    align-items: center;
+    background-color: rgba(1, 1, 1, 0.5);
+    color: white;
+    font-variant: small-caps;
+    height: 100%;
+    margin: auto 0;
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,10 +1,11 @@
-.FighterContainer {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+@import '../../styles/base.scss';
 
-  .fighterRow:first-child {
-    border-top: 2px solid;
-  }
+.FighterContainer {
+  @include absolute-position;
+
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  justify-content: center;
+  // flex-direction: row;
 }
