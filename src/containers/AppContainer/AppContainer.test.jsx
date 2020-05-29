@@ -1,9 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
+import { RecoilRoot } from 'recoil';
 import App from './index.jsx';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App>', () => {
+  const container = mount(
+    <RecoilRoot>
+      <App/>
+    </RecoilRoot>
+  );
+
+  it('should match the snapshot', () => {
+    expect(container.html()).toMatchSnapshot();
+  });
 });

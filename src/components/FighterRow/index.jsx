@@ -4,13 +4,12 @@ import Fighter from '../Fighter/index.jsx';
 
 import './FighterRow.scss';
 
-const FighterRow = ({ fighterChunk, ...passThroughProps }) => (
+const FighterRow = ({ fighterChunk }) => (
     <div className="fighterRow">
       {
         fighterChunk && fighterChunk.map((fighterData) => <Fighter
             key={fighterData.id}
             {...fighterData}
-            {...passThroughProps}
           />)
       }
     </div>
@@ -18,15 +17,11 @@ const FighterRow = ({ fighterChunk, ...passThroughProps }) => (
 
 const {
   arrayOf,
-  func,
-  number,
   object
 } = propTypes;
 
 FighterRow.propTypes = {
-  fighterChunk: arrayOf(object).isRequired,
-  selectingPlayer: number.isRequired,
-  setPlayerFighter: func.isRequired
+  fighterChunk: arrayOf(object).isRequired
 };
 
 export default FighterRow;

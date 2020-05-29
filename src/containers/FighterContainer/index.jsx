@@ -1,35 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { selectedFightersState } from '../../recoils/fighter';
+import { selectingPlayerState } from '../../recoils/player';
 import FighterChoice from '../../components/FighterChoice/index.jsx';
 import FighterSelection from '../../components/FighterSelection/index.jsx';
 import './FighterContainer.scss';
 
 const FighterContainer = () => {
-  const [playerOneFighter, setplayerOneFighter] = useState('mario');
-  const [playerTwoFighter, setplayerTwoFighter] = useState('mario');
-  const [selectingPlayer, setSelectingPlayer] = useState(0);
-
-
-  const setPlayerFighter = (name) => {
-    if (selectingPlayer === 0) {
-      setplayerOneFighter(name);
-    } else if (selectingPlayer === 1) {
-      setplayerTwoFighter(name);
-    }
-  };
+  const selectedFighters = useRecoilValue(selectedFightersState);
+  const setSelectingPlayer = useSetRecoilState(selectingPlayerState);
 
   return (
     <div className="FighterContainer">
       <FighterChoice
         leftFacing={true}
-        fighter={playerOneFighter}
+        fighter={selectedFighters[0]}
         onClick={() => setSelectingPlayer(0)}
       />
-      <FighterSelection
-        setPlayerFighter={setPlayerFighter}
-        selectingPlayer={selectingPlayer}
-      />
+      <FighterSelection/>
       <FighterChoice
-        fighter={playerTwoFighter}
+        fighter={selectedFighters[1]}
         onClick={() => setSelectingPlayer(1)}
       />
     </div>

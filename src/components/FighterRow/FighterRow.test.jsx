@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { RecoilRoot } from 'recoil';
 import FighterRow from './index.jsx';
 import Fighter from '../Fighter/index.jsx';
 
@@ -25,7 +26,11 @@ describe('<FighterRow>', () => {
     selectingPlayer: 0,
     setPlayerFighter: () => {}
   };
-  const container = shallow(<FighterRow {...props} />);
+  const container = mount(
+    <RecoilRoot>
+      <FighterRow {...props} />
+    </RecoilRoot>
+  );
 
   it('should match the snapshot', () => {
     expect(container.html()).toMatchSnapshot();
