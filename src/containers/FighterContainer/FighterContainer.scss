@@ -1,0 +1,11 @@
+@import '../../styles/base.scss';
+
+.FighterContainer {
+  @include absolute-position;
+
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  justify-content: center;
+  // flex-direction: row;
+}

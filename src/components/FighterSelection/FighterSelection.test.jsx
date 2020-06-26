@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
-import App from './index.jsx';
+import FighterSelection from './index.jsx';
 
-describe('<App>', () => {
+describe('<FighterSelection>', () => {
   const container = mount(
     <RecoilRoot>
-      <App/>
+      <FighterSelection/>
     </RecoilRoot>
   );
 

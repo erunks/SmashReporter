@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stage> should match the snapshot 1`] = `"<div class=\\"stage\\"><div class=\\"stageCard\\"><img src=\\"https://www.smashbros.com/assets_v2/img/stage/stage_img1.jpg\\" alt=\\"stage: Random\\"/><div class=\\"namePlate\\"><div class=\\"name\\">Random</div></div></div></div>"`;

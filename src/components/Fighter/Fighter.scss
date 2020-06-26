@@ -1,0 +1,169 @@
+@import '../../styles/base.scss';
+
+.fighter {
+  display: flex;
+  position: relative;
+}
+
+.fighterCard {  
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-right: 2px solid;
+  height: 55px;
+  max-width: 100px;
+  position: relative;
+  width: 90px;
+
+  &:hover {
+    z-index: 2;
+
+    .selection {
+      @include visible(inline);
+    }
+  }
+
+  .selection {
+    &.player-one {
+      @include blink-animation(primary-blink);
+      border-color: $primary-selection-color;
+
+      .bottomRight,
+      .topLeft {
+        @include blink-animation(primary-corner-blink);
+      }
+
+      .bottomRight {
+        border-top-color: $primary-selection-color;
+      }
+
+      .topLeft {
+        border-bottom-color: $primary-selection-color;
+      }
+    }
+    &.player-two {
+      @include blink-animation(secondary-blink);
+      border-color: $secondary-selection-color;
+
+      .bottomRight,
+      .topLeft {
+        @include blink-animation(secondary-corner-blink);
+      }
+
+      .bottomRight {
+        border-top-color: $secondary-selection-color;
+      }
+
+      .topLeft {
+        border-bottom-color: $secondary-selection-color;
+      }
+    }
+
+    @include absolute-position;
+    @include hidden;
+
+    border: 4px solid;
+    height: 100%;
+    width: 100%;
+
+    .bottomRight,
+    .topLeft {
+      height: 0;
+      position: absolute;
+      width: 0;
+    }
+
+    .bottomRight {
+      border-right: 12px solid transparent;
+      border-top: 12px solid;
+      left: 0;
+      top: 0;
+    }
+
+    .topLeft {
+      border-bottom: 12px solid;
+      border-left: 12px solid transparent;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .namePlate {
+    background-color: black;
+    height: 30px;
+    max-width: 100%;
+  }
+
+  .name {
+    color: white;
+    font-size: 12px;
+    padding: 0.25em 2px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+
+@keyframes primary-blink {
+	0% {
+    border-color: $primary-selection-color;
+  }
+  
+  50% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: $primary-selection-color;
+  }
+}
+
+@keyframes primary-corner-blink {
+	0% {
+    border-bottom-color: $primary-selection-color;
+    border-top-color: $primary-selection-color;
+  }
+  
+  50% {
+    border-bottom-color: white;
+    border-top-color: white;
+  }
+
+  100% {
+    border-bottom-color: $primary-selection-color;
+    border-top-color: $primary-selection-color;
+  }
+}
+
+@keyframes secondary-blink {
+	0% {
+    border-color: $secondary-selection-color;
+  }
+  
+  50% {
+    border-color: white;
+  }
+
+  100% {
+    border-color: $secondary-selection-color;
+  }
+}
+
+@keyframes secondary-corner-blink {
+	0% {
+    border-bottom-color: $secondary-selection-color;
+    border-top-color: $secondary-selection-color;
+  }
+  
+  50% {
+    border-bottom-color: white;
+    border-top-color: white;
+  }
+
+  100% {
+    border-bottom-color: $secondary-selection-color;
+    border-top-color: $secondary-selection-color;
+  }
+}

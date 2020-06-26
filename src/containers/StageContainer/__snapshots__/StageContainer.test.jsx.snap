@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StageContainer> should match the snapshot 1`] = `"<div class=\\"StageContainer\\"><div class=\\"stage\\"><div class=\\"stageCard\\"><img src=\\"https://www.smashbros.com/assets_v2/img/stage/stage_img1.jpg\\" alt=\\"stage: Battlefield\\"/><div class=\\"namePlate\\"><div class=\\"name\\">Battlefield</div></div></div></div><div class=\\"stage\\"><div class=\\"stageCard\\"><img src=\\"https://www.smashbros.com/assets_v2/img/stage/stage_img3.jpg\\" alt=\\"stage: Final Destination\\"/><div class=\\"namePlate\\"><div class=\\"name\\">Final Destination</div></div></div></div></div>"`;

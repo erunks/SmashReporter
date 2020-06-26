@@ -1,0 +1,36 @@
+.fighterRow{
+  animation: gradient 15s linear infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 221, 10, 1) 5%,
+    rgba(255, 255, 14, 1) 15%,
+    rgba(0, 212, 255, 1) 23%,
+    rgba(0, 212, 255, 1) 36%,
+    rgba(106, 49, 255, 1) 48%,
+    rgba(106, 49, 255, 1) 52%,
+    rgba(0, 212, 255, 1) 64%,
+    rgba(0, 212, 255, 1) 77%,
+    rgba(255, 255, 14, 1) 85%,
+    rgba(255, 221, 10, 1) 95%
+  );
+  background-size: 1000% 10%;
+  border: 2px solid;
+  border-right: 0px;
+  border-top: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes gradient {
+	0% {
+    background-position: 100% 0%;
+  }
+  
+  50% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}

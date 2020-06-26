@@ -3,17 +3,19 @@ import './index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/AppContainer';
+import { RecoilRoot } from 'recoil';
+import App from './containers/AppContainer/index.jsx';
 import * as serviceWorker from './serviceWorker';
-
-const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
-  rootElement
+  document.getElementById('root')
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
