@@ -6,7 +6,12 @@ import './FighterRow.scss';
 
 const FighterRow = ({ fighterChunk }) => (
     <div className="fighterRow">
-      {fighterChunk && fighterChunk.map((fighterData) => <Fighter key={fighterData.id} {...fighterData} /> )}
+      {
+        fighterChunk && fighterChunk.map((fighterData) => <Fighter
+            key={fighterData.id}
+            {...fighterData}
+          />)
+      }
     </div>
 );
 

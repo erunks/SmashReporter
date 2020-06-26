@@ -1,0 +1,21 @@
+@mixin absolute-position {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@mixin blink-animation($animation-function) {
+  animation: $animation-function 1s ease-in-out infinite;
+}
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin visible($display) {
+  display: $display;
+  visibility: visible;
+}

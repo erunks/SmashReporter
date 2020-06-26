@@ -3,14 +3,15 @@ import './index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './containers/AppContainer';
-// import StageContainer from './containers/StageContainer/index.jsx';
-import FighterContainer from './containers/FighterContainer/index.jsx';
+import { RecoilRoot } from 'recoil';
+import App from './containers/AppContainer/index.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FighterContainer />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );
