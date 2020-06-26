@@ -4,7 +4,7 @@ import chunk from 'lodash/chunk';
 import { useRecoilState } from 'recoil';
 import { fighterState } from '../../recoils/fighter';
 import { getFighters } from '../../lib/api';
-import FighterRow from '../FighterRow/index.jsx';
+import FighterRow from '../FighterRow';
 
 import './FighterSelection.scss';
 

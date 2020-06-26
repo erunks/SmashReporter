@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Stage from './index.jsx';
+import Stage from '.';
 
 describe('<Stage>', () => {
   const props = {

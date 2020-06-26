@@ -1,5 +1,5 @@
 import React from 'react';
-import FighterContainer from '../FighterContainer/index.jsx'
+import FighterContainer from '../FighterContainer'
 
 import './AppContainer.scss';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import { getStages, getLegalStages } from '../../lib/api';
-import Stage from '../../components/Stage/index.jsx';
+import Stage from '../../components/Stage';
 
 import './StageContainer.scss';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
-import FighterContainer from './index.jsx';
-import FighterChoice from '../../components/FighterChoice/index.jsx';
-import FighterSelection from '../../components/FighterSelection/index.jsx';
+import FighterContainer from '.';
+import FighterChoice from '../../components/FighterChoice';
+import FighterSelection from '../../components/FighterSelection';
 
 describe('<FighterContainer>', () => {
   const container = mount(

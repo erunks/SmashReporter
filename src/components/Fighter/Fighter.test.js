@@ -1,7 +1,7 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { mount } from 'enzyme';
-import Fighter from './index.jsx';
+import Fighter from '.';
 
 describe('<Fighter>', () => {
   const props = {

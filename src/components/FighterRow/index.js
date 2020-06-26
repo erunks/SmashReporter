@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import Fighter from '../Fighter/index.jsx';
+import Fighter from '../Fighter';
 
 import './FighterRow.scss';
 

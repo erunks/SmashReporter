@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import StageContainer from './index.jsx';
-import Stage from '../../components/Stage/index.jsx';
+import StageContainer from '.';
+import Stage from '../../components/Stage';
 
 describe('<StageContainer>', () => {
   const props = {

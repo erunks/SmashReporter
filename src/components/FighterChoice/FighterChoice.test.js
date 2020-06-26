@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { spy } from 'sinon';
-import FighterChoice from './index.jsx';
+import FighterChoice from '.';
 
 describe('<FighterChoice>', () => {
   const props = {

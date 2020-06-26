@@ -2,8 +2,8 @@ import React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedFightersState } from '../../recoils/fighter';
 import { selectingPlayerState } from '../../recoils/player';
-import FighterChoice from '../../components/FighterChoice/index.jsx';
-import FighterSelection from '../../components/FighterSelection/index.jsx';
+import FighterChoice from '../../components/FighterChoice';
+import FighterSelection from '../../components/FighterSelection';
 import './FighterContainer.scss';
 
 const FighterContainer = () => {

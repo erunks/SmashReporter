@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
-import FighterRow from './index.jsx';
-import Fighter from '../Fighter/index.jsx';
+import FighterRow from '.';
+import Fighter from '../Fighter';
 
 describe('<FighterRow>', () => {
   const props = {

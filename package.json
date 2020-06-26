@@ -8,8 +8,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npm run lint:eslint -- './src/**/*.{js,jsx}'",
-    "lint:fix": "npm run lint:eslint -- './src/**/*.{js,jsx}' --fix",
+    "lint": "npm run lint:eslint -- './src/**/*.js'",
+    "lint:fix": "npm run lint:eslint -- './src/**/*.js' --fix",
     "lint:eslint": "eslint --ignore-path .gitignore"
   },
   "browserslist": {
@@ -64,7 +64,7 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.js": [
       "npm run lint"
     ]
   }

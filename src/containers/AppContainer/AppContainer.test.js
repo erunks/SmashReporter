@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
-import App from './index.jsx';
+import App from '.';
 
 describe('<App>', () => {
   const container = mount(
