@@ -1,12 +1,12 @@
-import React from 'react';
-import FighterContainer from '../FighterContainer'
+import React, { Fragment }  from 'react';
+import Routes from '../../routes'
 
 import './AppContainer.scss';
 
-function App() {
-  return (
-    <FighterContainer />
-  );
-}
+const App = () => (
+    <Fragment>
+      <Routes />
+    </Fragment>
+)
 
 export default App;
