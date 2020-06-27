@@ -1,5 +1,27 @@
+@import '../../styles/base.scss';
+
 .StageContainer {
   display: grid;
-  grid-template-columns: repeat(8, auto);
-  gap: 10px;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 0;
+
+  @include breakpoint($sm) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @include breakpoint($md) {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  @include breakpoint($lg) {
+    grid-template-columns: repeat(6, auto);
+  }
+
+  @include breakpoint($xl) {
+    grid-template-columns: repeat(8, auto);
+  }
+
+  @include breakpoint($hd) {
+    grid-template-columns: repeat(9, auto);
+  }
 }

@@ -5,16 +5,19 @@
 
 .stageCard {
   position: relative;
+  margin: 0 auto;
   max-width: 325px;
 
   .namePlate {
     background-color: black;
+    border: 1px dashed white;
     height: 30px;
+    // margin: 0 3px;
     max-width: 100%;
   }
 
   img {
-    border: 3px solid;
+    border: 1px dashed white;
     height: auto;
     max-height:100%;
     max-width:100%;

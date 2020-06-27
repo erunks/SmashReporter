@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import { getStages, getLegalStages } from '../../lib/api';
+import MainLayout from '../MainLayout';
 import Stage from '../../components/Stage';
 
 import './StageContainer.scss';
 
 const StageContainer = ({ legal = true, initStages = [{}] }) => {
   const [stages, setStages] = useState(initStages);
+  const onlyLegal = typeof (legal) === 'boolean' ? legal : (legal === 'true');
 
   useEffect(() => {
-    if (legal) {
+    if (onlyLegal) {
       getLegalStages().then((legalStages) => {
         setStages(legalStages);
       });
@@ -18,25 +20,29 @@ const StageContainer = ({ legal = true, initStages = [{}] }) => {
         setStages(stages);
       });
     }
-  }, [legal]);
+  }, [onlyLegal]);
 
   const stagesPopulated = () => Object.getOwnPropertyNames(stages[0]).length
 
   return (
-    <div className="StageContainer">
-      {stagesPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />)}
-    </div>
+    <MainLayout>
+      <div className="StageContainer">
+        {stagesPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />)}
+      </div>
+    </MainLayout>
   );
 };
 
 const {
   arrayOf,
   bool,
-  object
+  object,
+  oneOfType,
+  string
 } = propTypes;
 
 StageContainer.propTypes = {
-  legal: bool,
+  legal: oneOfType([bool,string]),
   initStages: arrayOf(object)
 };
 
