@@ -3,14 +3,61 @@ $temp: white;
 
 .FighterChoice {
   align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border: 4px solid $temp;
   display: flex;
   filter: drop-shadow(15px 15px 4px $temp);
   justify-content: center;
   margin: auto;
   position: relative;
-  transform: skewY(-5deg);
-  width: 100%;
+  overflow: hidden;
+
+  &.vertical {
+    transform: skewY(-5deg);
+
+    @include breakpoint($sm) {
+      @include hidden;
+    }
+
+    @include breakpoint($xl) {
+      @include visible(flex);
+
+      height: 428px;
+      margin: auto;
+      width: 124px;
+    }
+  }
+
+  &.horizontal {
+    @include breakpoint($sm) {
+      background-size: cover;
+      height: 50px;
+      grid-column: auto;
+      grid-row: 2;
+      margin: .5em auto 0;
+      width: 270px;
+    }
+
+    @include breakpoint($lg) {
+      height: 150px;
+      margin: 2em auto;
+    }
+
+    @include breakpoint($xl) {
+      @include hidden;
+    }
+
+    &.faceLeft {
+      filter: drop-shadow(-15px 15px 4px $temp);
+      transform: none;
+
+      img {
+        transform: scale(-1,1);
+      }
+    }
+  }
 
   &.faceLeft {
     filter: drop-shadow(-15px 15px 4px $temp);
@@ -29,7 +76,14 @@ $temp: white;
 
   .helpText {
     @include absolute-position;
-    @include hidden;
+
+    @include breakpoint($sm) {
+      @include visible(flex);
+    }
+
+    @include breakpoint($xl) {
+      @include hidden;
+    }
 
     align-items: center;
     background-color: rgba(1, 1, 1, 0.5);

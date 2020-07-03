@@ -6,6 +6,7 @@
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
+  overflow-y: scroll;
 
   header, footer {
     color: white;
@@ -24,6 +25,8 @@
   footer {
     border-color: green;
     bottom: 0;
+    position: absolute;
+    transform: translateY(95%);
   }
 
   main {

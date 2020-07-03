@@ -1,0 +1,15 @@
+@import './breakpoints.scss';
+
+h1 {
+  @include breakpoint($sm) {
+    margin: 0.1em 0;
+  }
+
+  @include breakpoint($lg) {
+    margin: 0.5em 0;
+  }
+
+  @include breakpoint($xl) {
+    margin: 1em 0;
+  }
+}

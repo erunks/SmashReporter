@@ -1,11 +1,16 @@
 @import '../../styles/base.scss';
 
 .FighterContainer {
-  @include absolute-position;
-
   align-items: center;
   display: grid;
-  grid-template-columns: 10% auto 10%;
+  grid-auto-flow: row dense;
   justify-content: center;
-  // flex-direction: row;
+
+  @include breakpoint($sm) {
+    grid-template-columns: auto auto;
+  }
+
+  @include breakpoint($xl) {
+    grid-template-columns: 15% auto 15%;
+  }
 }

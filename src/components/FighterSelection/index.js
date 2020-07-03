@@ -15,7 +15,8 @@ const FighterSelection = () => {
     getFighters().then((fighters) => {
       setFighters(fighters);
     });
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fightersPopulated = () => Object.getOwnPropertyNames(fighters[0]).length
 
