@@ -1,4 +1,4 @@
-const smashAssets = 'https://www.smashbros.com/assets_v2/img';
+const smashAssets = 'https://ik.imagekit.io/ozcerk4wii';
 const fighterAssets = `${smashAssets}/fighter`;
 
 export const URLS = {

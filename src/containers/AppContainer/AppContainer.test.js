@@ -1,14 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { RecoilRoot } from 'recoil';
+import { mountWrapper } from 'helpers/test-helper';
 import App from '.';
 
 describe('<App>', () => {
-  const container = mount(
-    <RecoilRoot>
-      <App/>
-    </RecoilRoot>
-  );
+  const container = mountWrapper(<App/>);
 
   it('should match the snapshot', () => {
     expect(container.html()).toMatchSnapshot();

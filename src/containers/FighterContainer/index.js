@@ -1,20 +1,31 @@
-import React from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { selectedFightersState } from '../../recoils/fighter';
-import { selectingPlayerState } from '../../recoils/player';
-import MainLayout from '../MainLayout';
-import FighterChoice from '../../components/FighterChoice';
-import FighterSelection from '../../components/FighterSelection';
+import React, { useEffect } from 'react';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { fighterState, selectedFightersState } from 'recoils/fighter';
+import { selectingPlayerState } from 'recoils/player';
+import FighterChoice from 'components/FighterChoice';
+import FighterSelection from 'components/FighterSelection';
+import MainLayout from 'containers/MainLayout';
+import { getFighters } from 'lib/api';
+
 import './FighterContainer.scss';
 
 const FighterContainer = () => {
   const selectedFighters = useRecoilValue(selectedFightersState);
+  const [fighters, setFighters] = useRecoilState(fighterState);
   const setSelectingPlayer = useSetRecoilState(selectingPlayerState);
+
+  const fightersPopulated = () => Object.getOwnPropertyNames(fighters[0]).length
+
+  useEffect(() => {
+    getFighters().then((fighters) => {
+      setFighters(fighters);
+    })
+  }, [setFighters]);
 
   return (
     <MainLayout>
       <div className="center-container">
-        <div className="FighterContainer">
+        { fightersPopulated() && <div className="FighterContainer">
           <FighterChoice
             leftFacing={true}
             fighter={selectedFighters[0]}
@@ -25,7 +36,7 @@ const FighterContainer = () => {
             fighter={selectedFighters[1]}
             onClick={() => setSelectingPlayer(1)}
           />
-        </div>
+        </div>}
       </div>
     </MainLayout>
   )

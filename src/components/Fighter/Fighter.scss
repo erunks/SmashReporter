@@ -5,10 +5,10 @@
   position: relative;
 }
 
-.fighterCard {  
+.fighterCard {
   background-repeat: no-repeat;
   background-size: cover;
-  border-right: 2px solid;
+  border-right: 2px solid black;
   position: relative;
 
   @include breakpoint($sm) {
@@ -25,6 +25,11 @@
     height: 55px;
     max-width: 100px;
     width: 90px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 
   &:hover {

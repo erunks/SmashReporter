@@ -4,7 +4,7 @@ import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
-import App from './containers/AppContainer';
+import App from 'containers/AppContainer';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

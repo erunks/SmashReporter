@@ -1,10 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { selectedFightersState } from '../../recoils/fighter';
-import { selectingPlayerState } from '../../recoils/player';
-import { buttonize } from '../../helpers/jsx-a11y-helper'
-import { URLS } from '../../lib/imageAssets';
+import { selectedFightersState } from 'recoils/fighter';
+import { selectingPlayerState } from 'recoils/player';
+import { buttonize } from 'helpers/jsx-a11y-helper'
+import { IKImage } from 'imagekitio-react';
+import { URLS } from 'lib/imageAssets';
 
 import './Fighter.scss';
 
@@ -30,7 +31,13 @@ const Fighter = (props) => {
 
   return (
     <div className="fighter" { ...buttonize(() => setFighter()) }>
-      <div className="fighterCard" style={{ backgroundImage: `url(${fighter_thumbnail_icon})` }} alt={`fighter: ${props.name}`}>
+      <div className="fighterCard" alt={`fighter: ${props.name}`}>
+        <IKImage
+          src={fighter_thumbnail_icon}
+          alt={`fighter: ${props.name}`}
+          loading="lazy"
+          lqip={{ active: true }}
+        />
         <div className={`selection ${selectingPlayer === 0 ? 'player-one' : 'player-two'}`}>
           <div className="topLeft"></div>
           <div className="bottomRight"></div>

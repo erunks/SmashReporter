@@ -1,27 +1,116 @@
 @import '../../styles/base.scss';
 
 .StageContainer {
+  background-image: conic-gradient(
+    from -90deg,
+    transparent 0.45turn,
+    orange 0.5turn,
+    orange 0.55turn,
+    $royal_purple 0.85turn,
+    $glaicer_freeze 0.95turn,
+  );
+  background-position: 0% 100%;
+  background-size: 100% 200%;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px 0;
+  grid-template-columns: 40% auto;
+  height: 100%;
+  position: relative;
 
-  @include breakpoint($sm) {
-    grid-template-columns: repeat(3, auto);
+  .SelectedStage {
+    align-items: flex-start;
+    display: flex;
+    padding: 0 10px;
+    vertical-align: top;
+
+    @include breakpoint($md) {
+      align-items: center;
+      vertical-align: middle;  
+    }
+
+    .stage {
+      display: block;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+    
+    .stageCard {
+      background-color: black;
+      border: 6px solid black;
+      border-top-width: 12px;
+      clip-path: polygon(
+        0% 9%,     /* top left */
+        7% 0%,     /* top left */
+        100% 0%,    /* top right */
+        100% 0%,   /* top right */
+        100% 0%,  /* bottom right */
+        100% 100%,  /* bottom right */
+        0% 100%,   /* bottom left */
+        0 100%      /* bottom left */
+      );
+      max-width: 100%;
+
+      img {
+        clip-path: polygon(
+          0% 13%,     /* top left */
+          9% 0%,     /* top left */
+          100% 0%,    /* top right */
+          100% 0%,   /* top right */
+          100% 0%,  /* bottom right */
+          100% 100%,  /* bottom right */
+          0% 100%,   /* bottom left */
+          0 100%      /* bottom left */
+        );
+        border: 0;
+        // border: 6px solid white;
+        width: auto;
+      }
+
+      .name {
+        font-size: 24px;
+        line-height: 1em;
+      }
+
+      .namePlate {
+        background-image: radial-gradient(ellipse, #546171 50%, #37405A 50%);
+        background-position: 20% 32%;
+        background-size: 150% 1500%;
+        border: none;
+        height: auto;
+        padding: 0.5em 2px;
+      }
+
+      .selectedStageToken {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 
-  @include breakpoint($md) {
-    grid-template-columns: repeat(5, auto);
-  }
+  .StagePicker{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: auto;
+    overflow-y: scroll;
 
-  @include breakpoint($lg) {
-    grid-template-columns: repeat(6, auto);
-  }
+    @include breakpoint($sm) {
+      grid-template-columns: repeat(3, auto);
+    }
 
-  @include breakpoint($xl) {
-    grid-template-columns: repeat(8, auto);
-  }
+    @include breakpoint($md) {
+      grid-template-columns: repeat(5, auto);
+    }
 
-  @include breakpoint($hd) {
-    grid-template-columns: repeat(9, auto);
+    @include breakpoint($lg) {
+      grid-template-columns: repeat(6, auto);
+    }
+
+    @include breakpoint($xl) {
+      grid-template-columns: repeat(8, auto);
+    }
+
+    @include breakpoint($hd) {
+      grid-template-columns: repeat(9, auto);
+    }
   }
 }

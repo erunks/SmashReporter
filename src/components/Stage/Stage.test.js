@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallowWrapper } from 'helpers/test-helper';
 import Stage from '.';
 
 describe('<Stage>', () => {
@@ -8,7 +8,7 @@ describe('<Stage>', () => {
     id: 1,
     name: 'Random'
   };
-  const container = shallow(<Stage {...props}/>);
+  const container = shallowWrapper(<Stage {...props} />);
 
   it('should match the snapshot', () => {
     expect(container.html()).toMatchSnapshot();

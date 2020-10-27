@@ -1,8 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { RecoilRoot } from 'recoil';
+import { mountWrapper } from 'helpers/test-helper';
+import Fighter from 'components/Fighter';
 import FighterRow from '.';
-import Fighter from '../Fighter';
 
 describe('<FighterRow>', () => {
   const props = {
@@ -26,11 +25,7 @@ describe('<FighterRow>', () => {
     selectingPlayer: 0,
     setPlayerFighter: () => {}
   };
-  const container = mount(
-    <RecoilRoot>
-      <FighterRow {...props} />
-    </RecoilRoot>
-  );
+  const container = mountWrapper(<FighterRow {...props} />);
 
   it('should match the snapshot', () => {
     expect(container.html()).toMatchSnapshot();

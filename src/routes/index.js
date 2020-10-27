@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FighterContainer from '../containers/FighterContainer';
-import StageContainer from '../containers/StageContainer';
+import FighterContainer from 'containers/FighterContainer';
+import StageContainer from 'containers/StageContainer';
 
 const Routes = (passThroughProps) => (
     <Router>

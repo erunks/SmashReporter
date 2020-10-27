@@ -1,29 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
+import { useRecoilValue } from 'recoil';
+import { orderedFighters } from 'recoils/fighter';
+import FighterRow from 'components/FighterRow';
 import chunk from 'lodash/chunk';
-import { useRecoilState } from 'recoil';
-import { fighterState } from '../../recoils/fighter';
-import { getFighters } from '../../lib/api';
-import FighterRow from '../FighterRow';
 
 import './FighterSelection.scss';
 
 const FighterSelection = () => {
-  const [fighters, setFighters] = useRecoilState(fighterState);
-
-  useEffect(() => {
-    getFighters().then((fighters) => {
-      setFighters(fighters);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const fightersPopulated = () => Object.getOwnPropertyNames(fighters[0]).length
+  const fighters = useRecoilValue(orderedFighters);
 
   return (
     <div className="FighterSelection">
       {
-        fightersPopulated() && chunk(fighters, 12).map(
+        chunk(fighters, 12).map(
           (fighterChunk, index) => <FighterRow
               key={`fighterRow${index}`}
               fighterChunk={fighterChunk}

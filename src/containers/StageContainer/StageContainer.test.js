@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mountWrapper } from 'helpers/test-helper';
 import StageContainer from '.';
-import Stage from '../../components/Stage';
 
 describe('<StageContainer>', () => {
   const props = {
@@ -20,13 +19,17 @@ describe('<StageContainer>', () => {
     ]
   };
 
+  const container = mountWrapper(<StageContainer {...props} />);
+
   it('should match the snapshot', () => {
-    const container = shallow(<StageContainer {...props} />);
     expect(container.html()).toMatchSnapshot();
   });
 
+  it('should render the selected stage', () => {
+    expect(container.find('.SelectedStage > Stage').length).toEqual(1);
+  });
+
   it('should render the same number of Stage components as stages', () => {
-    const container = mount(<StageContainer {...props} />);
-    expect(container.find(Stage).length).toEqual(props.initStages.length);
-  })
+    expect(container.find('.StagePicker > Stage').length).toEqual(props.initStages.length);
+  });
 });

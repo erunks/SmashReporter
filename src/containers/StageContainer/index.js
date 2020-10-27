@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import { getStages, getLegalStages } from '../../lib/api';
-import MainLayout from '../MainLayout';
-import Stage from '../../components/Stage';
+import { useRecoilValue } from 'recoil';
+import { getSelectedStage } from 'recoils/stage';
+import Stage from 'components/Stage';
+import MainLayout from 'containers/MainLayout';
+import { getStages, getLegalStages } from 'lib/api';
 
 import './StageContainer.scss';
 
 const StageContainer = ({ legal = true, initStages = [{}] }) => {
-  const [stages, setStages] = useState(initStages);
   const onlyLegal = typeof (legal) === 'boolean' ? legal : (legal === 'true');
+  const selectedStage = useRecoilValue(getSelectedStage);
+  const [stages, setStages] = useState(initStages);
 
   useEffect(() => {
     if (onlyLegal) {
@@ -20,14 +23,26 @@ const StageContainer = ({ legal = true, initStages = [{}] }) => {
         setStages(stages);
       });
     }
-  }, [onlyLegal]);
+  }, [onlyLegal, stages]);
 
   const stagesPopulated = () => Object.getOwnPropertyNames(stages[0]).length
+  const renderSelectedStage = () => (
+    <div className="SelectedStage">
+      <Stage
+        displayName={true}
+        key={ `selectedStage ${selectedStage}` }
+        { ...stages[selectedStage] }
+      />
+    </div>
+  );
 
   return (
     <MainLayout>
       <div className="StageContainer">
-        {stagesPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />)}
+        { stagesPopulated() && renderSelectedStage() }
+        <div className="StagePicker">
+          { stagesPopulated() && stages.map((stageData) => <Stage key={stageData.id} {...stageData} />) }
+        </div>
       </div>
     </MainLayout>
   );

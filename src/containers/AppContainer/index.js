@@ -1,11 +1,17 @@
 import React, { Fragment }  from 'react';
-import Routes from '../../routes'
+import { IKContext } from 'imagekitio-react';
+import Routes from 'routes'
 
 import './AppContainer.scss';
 
 const App = () => (
     <Fragment>
-      <Routes />
+      <IKContext
+        publicKey="public_DfZPshOEvWdxzvxS8HGNWPJCo70="
+        urlEndpoint="https://ik.imagekit.io/ozcerk4wii"
+      >
+        <Routes />
+      </IKContext>
     </Fragment>
 )
 

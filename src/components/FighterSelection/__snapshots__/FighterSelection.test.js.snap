@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FighterSelection> should match the snapshot 1`] = `"<div class=\\"FighterSelection\\">0</div>"`;
+exports[`<FighterSelection> should match the snapshot 1`] = `"<div class=\\"FighterSelection\\"><div class=\\"fighterRow\\"><div class=\\"fighter\\" role=\\"button\\"><div class=\\"fighterCard\\" alt=\\"fighter: Mario\\"><img alt=\\"fighter: Mario\\" src=\\"https://ik.imagekit.io/ozcerk4wii/fighter/thumb_a/mario.png?ik-sdk-version=react-1.0.8&amp;tr=q-20%2Cbl-6\\"><div class=\\"selection player-one\\"><div class=\\"topLeft\\"></div><div class=\\"bottomRight\\"></div></div></div></div></div></div>"`;

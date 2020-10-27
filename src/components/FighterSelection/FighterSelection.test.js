@@ -1,13 +1,18 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { RecoilRoot } from 'recoil';
+import { mountWrapper } from 'helpers/test-helper';
+import { fighterState } from 'recoils/fighter';
 import FighterSelection from '.';
 
 describe('<FighterSelection>', () => {
-  const container = mount(
-    <RecoilRoot>
-      <FighterSelection/>
-    </RecoilRoot>
+  const fighterStateData = [{
+    dlc: 0,
+    id: 1,
+    name: 'Mario'
+  }];
+
+  const container = mountWrapper(
+    <FighterSelection />,
+    { initializeState: (snap) => snap.set(fighterState, fighterStateData) }
   );
 
   it('should match the snapshot', () => {
